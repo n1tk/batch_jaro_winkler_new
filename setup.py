@@ -2,6 +2,7 @@
 
 from distutils.core import setup
 from distutils.extension import Extension
+from Cython.Build import cythonize
 
 setup(
   name='batch_jaro_winkler',
@@ -14,5 +15,10 @@ setup(
   license='MIT',
   # I know, doesn't work but I don't want to use setuptools. Won't compile if < 3.3 anyway.
   python_requires='>=3.3',
-  ext_modules=[Extension('batch_jaro_winkler', ['cbatch_jaro_winkler.c', 'ext/batch_jaro_winkler.c'], language='c')]
+  setup_requires=[
+    'python>=3.6',
+    'cython>=0.28.4',
+  ],
+  #ext_modules=[Extension('batch_jaro_winkler', sources=['src/cbatch_jaro_winkler.pyx'])]
+  ext_modules=cythonize('src/cbatch_jaro_winkler.pyx', compiler_directives={"language_level": "3"})
 )

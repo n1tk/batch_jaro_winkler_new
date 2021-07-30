@@ -1,0 +1,5 @@
+#graft ext
+include lib/ *.c
+include lib/ *.h
+include src/ *.h
+include src/ *.c

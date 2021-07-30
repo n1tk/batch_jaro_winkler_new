@@ -1,0 +1,34 @@
+{% set name = "batch_jaro_winkler" %}
+{% set version = "0.1.1" %}
+
+package:
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
+
+source:
+  url: "https://github.com/n1tk/batch_jaro_winkler_new.git"
+
+build:
+  number: 0
+  noarch: python
+  script: "{{ PYTHON }} -m pip install . -vv"
+
+requirements:
+  host:
+    - pip
+    - python
+  run:
+    - python
+
+about:
+  home: "https://github.com/dbousque/batch_jaro_winkler"
+  license: MIT
+  license_family: MIT
+  license_file: 
+  summary: "Fast batch jaro winkler distance implementation in C99."
+  doc_url: 
+  dev_url: 
+
+extra:
+  recipe-maintainers:
+    - your-github-id-here
