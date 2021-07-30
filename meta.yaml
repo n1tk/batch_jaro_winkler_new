@@ -7,7 +7,6 @@ package:
 
 source:
   url: "https://github.com/n1tk/batch_jaro_winkler_new.git"
-
 build:
   number: 0
   noarch: python
@@ -16,9 +15,10 @@ build:
 requirements:
   host:
     - pip
-    - python
+    - python>=3.6
+    - cython
   run:
-    - python
+    - python>=3.6
 
 about:
   home: "https://github.com/dbousque/batch_jaro_winkler"
