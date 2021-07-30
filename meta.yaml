@@ -6,7 +6,7 @@ package:
   version: "{{ version }}"
 
 source:
-  url: "https://github.com/n1tk/batch_jaro_winkler_new.git"
+  url: "hhttps://github.com/n1tk/batch_jaro_winkler_new.git"
 
 build:
   number: 0
