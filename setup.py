@@ -14,7 +14,7 @@ setup(
   url='https://github.com/dbousque/batch_jaro_winkler',
   license='MIT',
   # I know, doesn't work but I don't want to use setuptools. Won't compile if < 3.3 anyway.
-  python_requires='>=3.3',
+  #python_requires='>=3.3',
   setup_requires=[
     'python>=3.6',
     'cython>=0.28.4',
