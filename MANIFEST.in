@@ -1,4 +1,4 @@
-#graft ext
+graft ext
 include lib *.c
 include lib *.h
 include src *.h
