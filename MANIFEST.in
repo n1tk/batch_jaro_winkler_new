@@ -2,7 +2,4 @@ graft ext
 include README.md
 include LICENSE
 include pyproject.toml
-recursive-include src/ext *.hpp *.h *.txx *.cpp *.c
-
-include src/*.c
-include src/*.h
+recursive-include src/lib *.h *.c
