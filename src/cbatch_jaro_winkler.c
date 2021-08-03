@@ -626,7 +626,7 @@ static CYTHON_INLINE float __PYX_NAN() {
 #define __PYX_HAVE_API__batch_jaro_winkler
 /* Early includes */
 #include <stdint.h>
-#include "lib/batch_jaro_winkler.h"
+#include "batch_jaro_winkler.h"
 #include <string.h>
 #include <stdlib.h>
 #include <stddef.h>
