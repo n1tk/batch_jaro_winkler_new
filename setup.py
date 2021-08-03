@@ -14,5 +14,5 @@ setup(
   # I know, doesn't work but I don't want to use setuptools. Won't compile if < 3.3 anyway.
   install_requires=["setuptools", "wheel", "Cython",'python_version >=3.6'
   ],
-  ext_modules=[Extension('batch_jaro_winkler', ['cbatch_jaro_winkler.c', 'ext/batch_jaro_winkler.c'], language='c')]
+  ext_modules=[Extension('batch_jaro_winkler', ['cbatch_jaro_winkler.c', 'src/ext/batch_jaro_winkler.c'], language='c')]
 )
