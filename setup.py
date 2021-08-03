@@ -1,10 +1,11 @@
 from setuptools import setup, Extension
 from setuptools.command.build_ext import build_ext
+from Cython.Build import cythonize
 import sys
 
 setup(
   name='batch_jaro_winkler',
-  version='0.1.1',
+  version='0.0.1',
   description='Fast batch jaro winkler distance implementation in C99.',
   long_description='This project gets its performance from the pre-calculation of an optimized model in advance of the actual runtime calculations. Supports any encoding.',
   author='Dominik Bousquet, Sergiu Buciumas',
@@ -16,5 +17,7 @@ setup(
   zip_safe = False,
   include_package_data = True,
   package_dir= {'': 'src'},
-  ext_modules=[Extension('batch_jaro_winkler', ['src/cbatch_jaro_winkler.c', 'src/ext/batch_jaro_winkler.c'], language='c')]
+  ext_modules=cythonize("cbatch_jaro_winkler.pyx"),
+  zip_safe=False,
+  #ext_modules=[Extension('batch_jaro_winkler', ['src/cbatch_jaro_winkler.c', 'src/lib/batch_jaro_winkler.c'], language='c')]
 )
