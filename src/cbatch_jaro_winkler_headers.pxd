@@ -3,7 +3,7 @@
 import os
 from libc cimport stdint
 
-cdef extern from "ext/batch_jaro_winkler.h":
+cdef extern from "src/lib/batch_jaro_winkler.h":
   ctypedef struct bjw_result:
     void *candidate
     float score
