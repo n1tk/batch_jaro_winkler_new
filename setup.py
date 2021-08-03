@@ -18,5 +18,5 @@ setup(
   include_package_data = True,
   package_dir= {'': 'src'},
   #ext_modules=cythonize("cbatch_jaro_winkler.pyx")
-  ext_modules=[Extension('batch_jaro_winkler', ['cbatch_jaro_winkler.c', 'lib/batch_jaro_winkler.c'], language='c')]
+  ext_modules=[Extension('batch_jaro_winkler', ['src/cbatch_jaro_winkler.c', 'src/lib/batch_jaro_winkler.c'], language='c')]
 )
