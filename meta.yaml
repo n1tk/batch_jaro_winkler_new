@@ -9,7 +9,7 @@ source:
   git_url: "https://github.com/n1tk/batch_jaro_winkler_new.git"
 
 build:
-  noarch: python
+  #noarch: python
   number: 0
   script: "{{ PYTHON }} -m pip install . -vv"
 
@@ -25,6 +25,10 @@ requirements:
     - python >=3.7
   run:
     - python >=3.7
+
+test:
+  imports:
+    - batch_jaro_winkler
 
 about:
   home: "https://github.com/dbousque/batch_jaro_winkler"
