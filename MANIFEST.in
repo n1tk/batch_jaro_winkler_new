@@ -1,5 +1,5 @@
 graft ext
-include lib *.c
-include lib *.h
-include src *.h
-include src *.c
+include README.md
+include LICENSE
+include pyproject.toml
+recursive-include src/ext *.hpp *.h *.txx *.cpp *.c

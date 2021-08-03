@@ -1,39 +1,19 @@
-#!/usr/bin/python3
+from setuptools import setup, Extension
+from setuptools.command.build_ext import build_ext
+import sys
 
-import os
-from setuptools import setup, find_packages, Extension
-
-try:
-    from Cython.Build import cythonize
-except ImportError:
-    cythonize = None
-
-
-# https://cython.readthedocs.io/en/latest/src/userguide/source_files_and_compilation.html#distributing-cython-modules
-def no_cythonize(extensions, **_ignore):
-    for extension in extensions:
-        sources = []
-        for sfile in extension.sources:
-            path, ext = os.path.splitext(sfile)
-            if ext in (".pyx", ".py"):
-                if extension.language == "c++":
-                    ext = ".cpp"
-                else:
-                    ext = ".c"
-                sfile = path + ext
-            sources.append(sfile)
-        extension.sources[:] = sources
-    return extensions
-
-
-extensions = [
-    Extension("batch_jaro_winkler", ["src/cbatch_jaro_winkler.pyx"]),
-]
-
-CYTHONIZE = bool(int(os.getenv("CYTHONIZE", 0))) and cythonize is not None
-
-if CYTHONIZE:
-    compiler_directives = {"language_level": 3, "embedsignature": True}
-    extensions = cythonize(extensions, compiler_directives=compiler_directives)
-else:
-    extensions = no_cythonize(extensions)
+setup(
+  name='batch_jaro_winkler',
+  version='0.1.1',
+  packages=['mbatch_jaro_winkler'],
+  description='Fast batch jaro winkler distance implementation in C99.',
+  long_description='This project gets its performance from the pre-calculation of an optimized model in advance of the actual runtime calculations. Supports any encoding.',
+  author='Dominik Bousquet',
+  author_email='bousquet.dominik@gmail.com',
+  url='https://github.com/dbousque/batch_jaro_winkler',
+  license='MIT',
+  # I know, doesn't work but I don't want to use setuptools. Won't compile if < 3.3 anyway.
+  install_requires=["setuptools", "wheel", "Cython",'python_version >=3.6'
+  ],
+  ext_modules=[Extension('batch_jaro_winkler', ['cbatch_jaro_winkler.c', 'ext/batch_jaro_winkler.c'], language='c')]
+)
