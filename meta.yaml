@@ -1,5 +1,5 @@
 {% set name = "batch_jaro_winkler" %}
-{% set version = "0.1.1" %}
+{% set version = "0.0.1" %}
 
 package:
   name: "{{ name|lower }}"
@@ -14,13 +14,16 @@ build:
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
+  buid:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
   host:
-    - pip
-    - cython
-    - python>=3.6
+    - numpy
+    - setuptools
+    - cython >=0.24.1
+    - python >=3.7
   run:
-    - cython
-    - python>=3.6
+    - python >=3.7
 
 about:
   home: "https://github.com/dbousque/batch_jaro_winkler"
