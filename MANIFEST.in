@@ -1,4 +1,4 @@
-graft lib
+graft src
 include README.md
 include LICENSE
 include pyproject.toml
