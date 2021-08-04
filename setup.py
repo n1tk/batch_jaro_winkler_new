@@ -12,7 +12,7 @@ setup(
   author_email='buciuser@gmail.com',
   url='https://github.com/n1tk/batch_jaro_winkler_new',
   license='MIT',
-  install_requires=["setuptools", "wheel", "Cython"],
+  install_requires=["setuptools", "Cython"],
   python_requires='>=3.6',
   zip_safe = False,
   include_package_data = True,

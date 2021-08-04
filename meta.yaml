@@ -21,14 +21,12 @@ requirements:
     - python >=3.6
     - setuptools
     - cython
-    - wheel
   host:
     - numpy
     - pip
     - setuptools
     - cython
     - python
-    - wheel
   run:
     - python
   
