@@ -10,8 +10,8 @@ source:
 
 build:
   #noarch: python
-  number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  #number: 0
+  #script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   buid:
@@ -21,10 +21,11 @@ requirements:
     - numpy
     - pip
     - setuptools
-    - cython >=0.24.1
+    - cython
     - python >=3.6
   run:
     - python >=3.6
+    - cython
 
 test:
   imports:
