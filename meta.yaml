@@ -22,9 +22,9 @@ requirements:
     - pip
     - setuptools
     - cython >=0.24.1
-    - python >=3.7
+    - python >=3.6
   run:
-    - python >=3.7
+    - python >=3.6
 
 test:
   imports:
