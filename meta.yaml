@@ -17,6 +17,10 @@ requirements:
   buid:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - numpy
+    - python >=3.6
+    - setuptools
+    - cython
   host:
     - numpy
     - pip
