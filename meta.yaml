@@ -13,10 +13,11 @@ build:
   number: 0
 
 requirements:
-  buid:
+  build:
     - {{ compiler('c') }}
     - python >=3.6
     - cython >=0.20
+    - setuptools
 
   host:
     - numpy
@@ -26,7 +27,6 @@ requirements:
   run:
     - python
   
-
 test:
   imports:
     - batch_jaro_winkler
