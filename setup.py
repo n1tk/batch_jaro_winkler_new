@@ -10,6 +10,12 @@ from glob import glob
 include_dirs = ['src']
 sources = glob('src/*.pyx') #+ glob('src/*.c') + glob('src/lib/*.c')
 
+ext_modules=[Extension('batch_jaro_winkler',
+                         sources=sources,
+                         include_dirs=include_dirs,
+                         ),
+               ]
+
 setup(
   name='batch_jaro_winkler',
   version='0.0.1',
@@ -25,10 +31,6 @@ setup(
   zip_safe = False,
   include_package_data = True,
   package_dir= {'': 'src'},
-  ext_modules=[Extension('batch_jaro_winkler',
-                         sources=sources,
-                         include_dirs=include_dirs,
-                         ),
-               ],
+  ext_modules = cythonize(ext_modules),
 )
 
