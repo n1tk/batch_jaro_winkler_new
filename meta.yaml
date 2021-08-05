@@ -18,6 +18,7 @@ requirements:
     - python >=3.6
     - cython >=0.20
     - setuptools
+    #script: {{ PYTHON }} setup.py install --single-version-externally-managed --record=record.txt
 
   host:
     - numpy
