@@ -15,12 +15,10 @@ build:
 requirements:
   buid:
     - python >=3.6
-    - setuptools
     - cython
   host:
     - numpy
     - pip
-    - setuptools
     - cython
     - python
   run:
