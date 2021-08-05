@@ -9,7 +9,6 @@ from glob import glob
 #['src/cbatch_jaro_winkler.pyx']
 include_dirs = ['src']
 sources = glob('src/*.pyx') + glob('src/*.c') + glob('src/lib/*.c')
-libraries = ['dl']
 
 setup(
   name='batch_jaro_winkler',
@@ -29,7 +28,6 @@ setup(
   ext_modules=[Extension('batch_jaro_winkler',
                          sources=sources,
                          include_dirs=include_dirs,
-                         libraries=libraries,
                          ),
                ],
 )
