@@ -1,20 +1,21 @@
 from setuptools import _install_setup_requires, setup, Extension
 from setuptools.command.build_ext import build_ext
 from Cython.Build import cythonize
+from setuptools import find_packages, setup
 import sys
 from glob import glob
 
 #ext_modules=cythonize("src/cbatch_jaro_winkler.pyx")
 #ext_modules=[Extension('batch_jaro_winkler', ['src/cbatch_jaro_winkler.c', 'src/lib/batch_jaro_winkler.c'], language='c')]
 #['src/cbatch_jaro_winkler.pyx']
-include_dirs = ['src']
-sources = glob('src/*.pyx') #+ glob('src/*.c') + glob('src/lib/*.c')
+#include_dirs = ['src']
+#sources = glob('src/*.pyx') #+ glob('src/*.c') + glob('src/lib/*.c')
 
-ext_modules=[Extension('batch_jaro_winkler',
-                         sources=sources,
-                         include_dirs=include_dirs,
-                         ),
-               ]
+#ext_modules=[Extension('batch_jaro_winkler',
+#                         sources=sources,
+#                         include_dirs=include_dirs,
+#                         ),
+#               ]
 
 setup(
   name='batch_jaro_winkler',
@@ -31,6 +32,6 @@ setup(
   zip_safe = False,
   include_package_data = True,
   package_dir= {'': 'src'},
-  ext_modules = cythonize(ext_modules),
+  ext_modules = cythonize(['src/*.pyx'])
 )
 
