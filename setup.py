@@ -19,7 +19,7 @@ setup(
   author_email='buciuser@gmail.com',
   url='https://github.com/n1tk/batch_jaro_winkler_new',
   license='MIT',
-  setup_requires=["setuptools", "cython"],
+  setup_requires=["cython"],
   install_requires=["python >=3.6", "cython"],
   python_requires='>=3.6',
   zip_safe = False,
