@@ -14,8 +14,10 @@ build:
 
 requirements:
   buid:
+    - {{ compiler('c') }}
     - python >=3.6
-    - cython
+    - cython >=0.20
+
   host:
     - numpy
     - pip
