@@ -8,7 +8,7 @@ from glob import glob
 #ext_modules=[Extension('batch_jaro_winkler', ['src/cbatch_jaro_winkler.c', 'src/lib/batch_jaro_winkler.c'], language='c')]
 #['src/cbatch_jaro_winkler.pyx']
 include_dirs = ['src']
-sources = glob('src/*.pyx') + glob('src/*.c') + glob('src/lib/*.c') + glob('src/lib/*.h')
+sources = glob('src/*.pyx') + glob('src/*.c') + glob('src/lib/*.c')
 libraries = ['dl']
 
 setup(
